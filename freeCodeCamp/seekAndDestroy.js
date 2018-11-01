@@ -22,3 +22,15 @@ function destroyer(arr, ...args) {
 destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 
 // This solution passed all tests at freeCodeCamp.org 
+
+// This is another solution I thought of which I quite like...
+
+function destroyer(arr, ...args) {
+  return arr.filter(item => {
+    return args.includes(item) === false;
+  });
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
+// This solution passed all tests at freeCodeCamp.org 
