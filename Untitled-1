@@ -1,0 +1,15 @@
+// Reverse a string
+
+// My solution to the reverse a string problem 
+
+// I got this problem from coderbyte.com
+
+
+function reverse(str){
+    return str.split('').reverse().join('');
+}
+
+reverse('hello');
+reverse('javascript');
+reverse('algorithms');
+reverse('challenge');
