@@ -9,7 +9,7 @@ function reverse(str){
     return str.split('').reverse().join('');
 }
 
-reverse('hello');
-reverse('javascript');
-reverse('algorithms');
-reverse('challenge');
+console.log(reverse('hello'));
+console.log(reverse('javascript'));
+console.log(reverse('algorithms'));
+console.log(reverse('challenge'));
