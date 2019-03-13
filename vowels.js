@@ -27,3 +27,8 @@ function vowels(str){
 }
 
 vowels('Hi There!');
+
+function regexVowels(str){
+    const regex = /[aeiou]/gi;
+    return str.match(regex).length;   
+}
