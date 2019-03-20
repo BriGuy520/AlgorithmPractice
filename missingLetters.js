@@ -10,11 +10,9 @@ function fearNotLetter(str) {
 
   const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
-  for(let i = 0; i < str.length; i++){
-    for(let j = alphabet.indexOf(str[0]); j < alphabet.length; j++){
-      if(!str.includes(alphabet[j])){
-        return alphabet[j];
-      }
+  for(let j = alphabet.indexOf(str[0]); j < alphabet.length; j++){
+    if(!str.includes(alphabet[j])){
+      return alphabet[j];
     }
   }
 }
