@@ -20,27 +20,26 @@
 const Stack = require('./stack');
 
 class Queue extends Stack {
-    constructor(data){
-        super(data)
+    constructor(){  
         this.inbox = new Stack();
         this.outbox = new Stack();
     }
 
     add(item){
-        this.inbox.push(item);
+        this.inbox.data.push(item);
     }
 
     remove(){
-        if(this.outbox.length === 0){
-            while(!this.inbox.length !== 0){
-                this.outbox.push(this.inbox.pop());
+        if(this.outbox.data.length === 0){
+            if(this.inbox.data.length !== 0){
+                this.outbox.data.push(this.inbox.data.pop());
             }
         }
-        return this.outbox;
+        return this.outbox.data[this.outbox.data.length - 1];
     }
 
     peek(){
-        return this.inbox[this.inbox.length - 1];
+        return this.inbox.data[this.inbox.data.length - 1];
     }
 }
 
