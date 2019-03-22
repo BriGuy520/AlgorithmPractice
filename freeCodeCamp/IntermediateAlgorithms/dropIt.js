@@ -13,7 +13,7 @@ function dropElements(arr, func) {
     const copy = arr.map(func);
     let slicedArr = [];
     
-      const result = copy.find((bool, idx) => {
+    copy.find((bool, idx) => {
         if(bool){
           slicedArr = arr.slice(idx);
       } else {
