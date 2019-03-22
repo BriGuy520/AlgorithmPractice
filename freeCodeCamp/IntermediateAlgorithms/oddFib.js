@@ -19,7 +19,7 @@ function sumFibs(num) {
   	if(i <= 1){
 			arr.push(i);
     } else {
-			total = arr[i - 2] + arr[i - 1];
+	total = arr[i - 2] + arr[i - 1];
       arr.push(total);
     }
   }
