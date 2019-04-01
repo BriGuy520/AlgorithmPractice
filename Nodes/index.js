@@ -24,6 +24,10 @@ class LinkedList {
         }
         return count;
     }
+
+    getFirst(){
+        return this.head["data"];
+    }
 }
 
 let list = new LinkedList();
