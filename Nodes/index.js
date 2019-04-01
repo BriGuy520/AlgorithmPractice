@@ -11,9 +11,18 @@ class LinkedList {
     }
 
     insertFirst(data){
-        let currentNode = new Node(data);
+        let currentNode = new Node(data, this.head);
        	this.head = currentNode;
-      	return this.head;
+    }
+
+    size(){
+        let count = 0;
+        let node = this.head;
+        while(node !== null){
+            count++;
+            node = node.next;
+        }
+        return count;
     }
 }
 
@@ -21,4 +30,4 @@ let list = new LinkedList();
 list.insertFirst("Hello");
 list.insertFirst(456);
 list.insertFirst("Hey John");
-list;
+list.size();
