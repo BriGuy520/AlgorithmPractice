@@ -30,6 +30,10 @@ class LinkedList {
     }
 
     getLast(){
+        if(!this.head){
+            return null;
+        }
+
         let node = this.head;
         while(node !== null){
            if(node.next === null){
@@ -38,6 +42,10 @@ class LinkedList {
              node = node.next;
            }
         }
+    } 
+
+    clear(){
+    	this.head = null;
     }
 }
 
@@ -46,4 +54,5 @@ list.insertFirst("Hello");
 list.insertFirst(456);
 list.insertFirst("Hey John");
 list.getLast();
+list.clear();
 list.size();
