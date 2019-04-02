@@ -47,6 +47,14 @@ class LinkedList {
     clear(){
     	this.head = null;
     }
+
+    removeFirst(){
+        if(!this.head){
+            return null;
+        }
+      
+      	this.head = this.head.next;
+    }
 }
 
 let list = new LinkedList();
@@ -54,5 +62,6 @@ list.insertFirst("Hello");
 list.insertFirst(456);
 list.insertFirst("Hey John");
 list.getLast();
-list.clear();
+list.removeFirst();
 list.size();
+list;
