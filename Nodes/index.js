@@ -80,45 +80,38 @@ class LinkedList {
         }
     }
 
-    // Better Solution. Most Optimal.
-
     insertLast(data){
         let addNode = new Node(data);
         let lastNode = this.getLast();
       
       	lastNode.next = addNode;
-    }    
+    }   
+  
+  	getAt(idx){
+      let node = this.head;
+      let count = 0;
 
-    // Alternate Solution.
+      while(count < idx){
+        count++;
+        node = node.next;
+      }
 
-    // insertLast(data){
-    //     let addNode = new Node(data);
-    //     let existList = this.head;
-
-    //     if(!this.head){
-    //         return;
-    //     }
-
-    //     while(existList !== null){
-    //         if(existList.next === null){
-    //           	existList.next = addNode;
-    //             return existList;
-    //         } else {
-    //             existList = existList.next;
-    //         }
-    //     }
-    // }  
-    
-    getAt(idx){
+      return node.data;
+    }
+  
+    removeAt(idx){
         let node = this.head;
+        let nextNode = this.head.next
         let count = 0;
-
-        while(count < idx){
-            count++;
-            node = node.next;
-        }
-        
-        return node;
+      
+      while(count < idx){
+        count++;
+      	node = node.next;
+       	nextNode = nextNode.next
+      }
+      
+      node = nextNode;
+      return node;
     }
 
 }
@@ -127,12 +120,15 @@ let list = new LinkedList();
 list.insertFirst("Hello");
 list.insertFirst(456);
 list.insertFirst("Hey John");
+list.insertFirst("HEY");
 list.getLast();
 list.removeFirst();
 list.size();
 list;
 list.removeLast();
-list;
 list.insertLast(1200);
+list.insertLast(555);
+list.getAt(1)
 list;
-list.getAt(1);
+list.removeAt(1);
+list;
