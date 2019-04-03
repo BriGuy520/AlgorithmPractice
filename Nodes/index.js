@@ -57,12 +57,17 @@ class LinkedList {
     }
 
     removeLast(){
+
+        let currentNode = this.head;
+        let nextNode = this.head.next;
+          
         if(!this.head){
             return;
         }
       
-      	let currentNode = this.head;
-      	let nextNode = this.head.next;
+      	if(currentNode.next === null){
+              currentNode = null;
+          }
       
       	while(currentNode !== null){
         	if(nextNode.next === null){
@@ -75,6 +80,20 @@ class LinkedList {
         }
     }
 
+    insertLast(data){
+        let addNode = new Node(data);
+        let existList = this.head;
+
+        while(existList !== null){
+            if(existList.next === null){
+              	existList.next = addNode;
+                return existList;
+            } else {
+                existList = existList.next;
+            }
+        }
+    }    
+
 }
 
 let list = new LinkedList();
@@ -86,4 +105,6 @@ list.removeFirst();
 list.size();
 list;
 list.removeLast();
+list;
+list.insertLast(1200);
 list;
