@@ -80,19 +80,34 @@ class LinkedList {
         }
     }
 
+    // Better Solution. Most Optimal.
+
     insertLast(data){
         let addNode = new Node(data);
-        let existList = this.head;
-
-        while(existList !== null){
-            if(existList.next === null){
-              	existList.next = addNode;
-                return existList;
-            } else {
-                existList = existList.next;
-            }
-        }
+        let lastNode = this.getLast();
+      
+      	lastNode.next = addNode;
     }    
+
+    // Alternate Solution.
+
+    // insertLast(data){
+    //     let addNode = new Node(data);
+    //     let existList = this.head;
+
+    //     if(!this.head){
+    //         return;
+    //     }
+
+    //     while(existList !== null){
+    //         if(existList.next === null){
+    //           	existList.next = addNode;
+    //             return existList;
+    //         } else {
+    //             existList = existList.next;
+    //         }
+    //     }
+    // }    
 
 }
 
