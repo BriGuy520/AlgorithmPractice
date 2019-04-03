@@ -107,7 +107,19 @@ class LinkedList {
     //             existList = existList.next;
     //         }
     //     }
-    // }    
+    // }  
+    
+    getAt(idx){
+        let node = this.head;
+        let count = 0;
+
+        while(count < idx){
+            count++;
+            node = node.next;
+        }
+        
+        return node;
+    }
 
 }
 
@@ -123,3 +135,4 @@ list.removeLast();
 list;
 list.insertLast(1200);
 list;
+list.getAt(1);
