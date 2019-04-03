@@ -55,6 +55,26 @@ class LinkedList {
       
       	this.head = this.head.next;
     }
+
+    removeLast(){
+        if(!this.head){
+            return;
+        }
+      
+      	let currentNode = this.head;
+      	let nextNode = this.head.next;
+      
+      	while(currentNode !== null){
+        	if(nextNode.next === null){
+            currentNode.next = null;
+            return currentNode;
+          } else {
+            currentNode = currentNode.next;
+            nextNode = nextNode.next;
+          }
+        }
+    }
+
 }
 
 let list = new LinkedList();
@@ -64,4 +84,6 @@ list.insertFirst("Hey John");
 list.getLast();
 list.removeFirst();
 list.size();
+list;
+list.removeLast();
 list;
