@@ -115,15 +115,24 @@ class LinkedList {
   
   	insertAt(data, idx){
       let node = new Node(data);
-      if(!this.head){
+      let existList = this.head;
+      
+      if(idx === 0){
+        this.head = node;
+        this.head.next = existList;
+        return node;
+      }
+      
+      if(this.getAt(idx).next == null){
+      	this.getAt(idx).next = node;
         return node;
       }
       
       if(this.getAt(idx)){
-        	node.next = this.getAt(idx);
-      	 this.getAt(idx - 1).next = node;
-        	return node;
-      } 
+        node.next = this.getAt(idx);
+        this.getAt(idx - 1).next = node;
+        return node;
+   		}
     }
 }
 
@@ -143,5 +152,5 @@ list.getAt(1)
 list;
 list.removeAt();
 list;
-list.insertAt("Hello", 2);
+list.insertAt("Hello", 4);
 list;
