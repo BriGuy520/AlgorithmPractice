@@ -112,7 +112,19 @@ class LinkedList {
       return this.getAt(idx - 1).next = this.getAt(idx).next;  
      }
     }
-
+  
+  	insertAt(data, idx){
+      let node = new Node(data);
+      if(!this.head){
+        return node;
+      }
+      
+      if(this.getAt(idx)){
+        	node.next = this.getAt(idx);
+      	 this.getAt(idx - 1).next = node;
+        	return node;
+      } 
+    }
 }
 
 let list = new LinkedList();
@@ -130,4 +142,6 @@ list.insertLast(555);
 list.getAt(1)
 list;
 list.removeAt();
+list;
+list.insertAt("Hello", 2);
 list;
