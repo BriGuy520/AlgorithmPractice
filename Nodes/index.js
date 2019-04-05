@@ -96,22 +96,21 @@ class LinkedList {
         node = node.next;
       }
 
-      return node.data;
+      return node;
     }
   
-    removeAt(idx){
-        let node = this.head;
-        let nextNode = this.head.next
-        let count = 0;
+ 		removeAt(idx){
+     if(idx === null){
+      	return; 
+     } 
+     
+     if(idx === 0){
+     	this.head = this.head.next;  
+     }
       
-      while(count < idx){
-        count++;
-      	node = node.next;
-       	nextNode = nextNode.next
-      }
-      
-      node = nextNode;
-      return node;
+     if(this.getAt(idx)){
+      return this.getAt(idx - 1).next = this.getAt(idx).next;  
+     }
     }
 
 }
@@ -130,5 +129,5 @@ list.insertLast(1200);
 list.insertLast(555);
 list.getAt(1)
 list;
-list.removeAt(1);
+list.removeAt();
 list;
