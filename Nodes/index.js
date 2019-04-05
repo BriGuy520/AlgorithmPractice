@@ -136,6 +136,27 @@ class LinkedList {
     }
 }
 
+function midpoint(list){
+	let slow = list.head;
+  let fast = list.head;
+  
+  while(fast !== null){
+		slow = slow.next;
+    fast = fast.next.next;  
+  }
+	slow.next = undefined;
+  return slow;
+}
+
+let list2 = new LinkedList();
+list2.insertFirst(200);
+list2.insertFirst(300);
+list2.insertLast(400);
+list2.insertLast(500);
+list2.insertLast(600);
+list2.insertLast(700);
+midpoint(list2);
+
 let list = new LinkedList();
 list.insertFirst("Hello");
 list.insertFirst(456);
