@@ -32,9 +32,20 @@ class Tree {
   constructor(){
     this.root = null;
   }
+
+  traverseBF(func){
+    if(!this.root) return;
+    let arr = [];
+    arr.push(this.root);
+    while(arr.length !== 0){
+     const node = arr.shift();
+     arr.push(...node.children);
+     func(node);
+    }
+ }
 }
 
-let node = new Node("Hello Tree");
+let node = new Node("CEO");
 let tree = new Tree();
 tree.root = node;
 
