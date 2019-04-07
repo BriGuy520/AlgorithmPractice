@@ -165,14 +165,24 @@ function circular(list){
   }
 
   function fromLast(list, n){
-    let count = 0;
+    // let count = 0;
 
-    while(count < n){
-      list.removeLast();
-      count++;
-    }
+    // while(count < n){
+    //   list.removeLast();
+    //   count++;
+    // }
     
-    return list.getLast();
+    // return list.getLast();
+
+    let fast = list.getAt(n);
+    let slow = list.getFirst();
+
+    while(fast.next !== null){
+        slow = slow.next;
+        fast = fast.next;
+    }
+
+    return slow;
   }
 
 let list4 = new LinkedList();
