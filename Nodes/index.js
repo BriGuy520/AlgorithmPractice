@@ -148,6 +148,22 @@ function midpoint(list){
   return slow;
 }
 
+function circular(list){
+    let slow = list.head;
+    let fast = list.head;
+    
+    while(fast.next && fast.next.next){
+      slow = slow.next;
+      fast = fast.next.next;
+      
+      if(slow === fast){
+      	return true;  
+      }
+    }
+  	
+	return false
+  }
+
 let list2 = new LinkedList();
 list2.insertFirst(200);
 list2.insertFirst(300);
@@ -156,6 +172,16 @@ list2.insertLast(500);
 list2.insertLast(600);
 list2.insertLast(700);
 midpoint(list2);
+
+let list3 = new LinkedList();
+let a = new Node("a");
+let b = new Node("b");
+let c = new Node("c");
+list3.head = a;
+a.next = b;
+b.next = c;
+list3;
+circular(list3);
 
 let list = new LinkedList();
 list.insertFirst("Hello");
