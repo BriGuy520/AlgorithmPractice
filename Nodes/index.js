@@ -164,6 +164,25 @@ function circular(list){
 	return false
   }
 
+  function fromLast(list, n){
+    let count = 0;
+
+    while(count < n){
+      list.removeLast();
+      count++;
+    }
+    
+    return list.getLast();
+  }
+
+let list4 = new LinkedList();
+list4.insertFirst(22);
+list4.insertLast('a');
+list4.insertLast('b');
+list4.insertLast('c');
+list4.insertLast('d');  
+fromLast(list4, 2).data; 
+
 let list2 = new LinkedList();
 list2.insertFirst(200);
 list2.insertFirst(300);
