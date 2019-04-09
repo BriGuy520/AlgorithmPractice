@@ -43,6 +43,16 @@ class Tree {
      func(node);
     }
  }
+
+ traverseDF(func){
+   let arr = [this.root];
+
+   while(arr.length !== 0){
+     const node = arr.shift();
+     arr.unshift(...node.children);
+     func(node);
+   }
+ }
 }
 
 let node = new Node("CEO");
