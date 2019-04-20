@@ -16,27 +16,10 @@
 
 function truthCheck(collection, pre) {
   // Is everyone being true?
-  let count = 0;
-  collection.forEach(obj => {
-    Object.keys(obj).forEach(key => {
-      Object.values(obj).forEach(value => {
-        if(key === pre && value){
-          count++;
-          console.log(count)
-          console.log(collection.length)
-        }
-      });
-    });
-  });
-
-  if(count === collection.length){
-    return true;
-  } else {
-    return false;
-  }
+  return collection.every(obj => obj[pre]);
 }
 
-truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true, "alias": "Repete"}, {"name": "FastFoward", "onBoat": true}], "onBoat");
+truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
 
-// This is what I have so far.
-// This passes all tests except two.
+// This answer is my own.
+// This answer passed all tests at freeCodeCamp.org
