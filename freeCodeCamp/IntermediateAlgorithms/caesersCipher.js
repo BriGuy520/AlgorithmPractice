@@ -16,13 +16,15 @@
 function rot13(str) { // LBH QVQ VG!
   
   const str2Arr = str.split('');
-  
+  const regex = /\W/g;
   const result = str2Arr.map(char => String.charCodeAt(char)).map(code => {
   	return (code !== 32 ? String.fromCodePoint(code - 13) : String.fromCodePoint(code));
   }).map(check => {
-    if(Number(check)){
-     	let newCode = String.charCodeAt(check) + 26; 
-      return String.fromCodePoint(newCode);
+    if(Number(check) || check.match(regex)){
+      if(String.charCodeAt(check) !== 32){
+     		let newCode = String.charCodeAt(check) + 26; 
+        return String.fromCodePoint(newCode);
+      }
     } 
     return check;
   }).join('');
