@@ -11,7 +11,7 @@ const rand5 = () => {
   if(store >= 1 && store <= 5){
    	return store; 
   } else {
-    return rand7();
+    return rand5();
   }
 }
 
