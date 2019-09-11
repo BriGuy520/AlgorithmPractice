@@ -18,9 +18,23 @@ function persistence(n){
   let temp;
   let numToStr = n.toString().split("");
   
+  if(n <= 24 && n >= 10 || n <= 33 && n >= 30) {
+    count++; 
+    return count;
+  }
+  
+  if(n < 10){
+  	return count; 
+  }
+
   function callLoop(numStr){
     for(let int of numStr){
-      total *= Number(int); 
+      if(Number(int) === 0){
+      	count++;
+        return count;
+      } else {
+      	total *= Number(int); 
+      }
     }
     
     if(total >= 10){
@@ -29,16 +43,12 @@ function persistence(n){
       total = 1;
       return callLoop(temp);
     } else {
-      if(count === 0){
-        return 0;
-     } else {
-         count++;
-         return count;
-       }
+      count++;
+      return count;
     }
   } 
   
 	return callLoop(numToStr);
 }
 
-persistence(999);
+persistence(511);
