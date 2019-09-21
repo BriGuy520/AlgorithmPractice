@@ -9,7 +9,7 @@
 function f(n){
   //insert your code here.... and go crazy!
   let total = 0;
-  if(n > 0){
+  if(n > 0 && Number.isInteger(n)){
     for(let i = 1; i <= n; i++){
         total += i;
     }
@@ -18,6 +18,6 @@ function f(n){
   }
   return total;
 };
-
+  
 f(100);
   
