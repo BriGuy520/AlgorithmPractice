@@ -12,7 +12,7 @@ function foldTo(distance){
   let folds = 0;
   let thickness = 0.0001;
   
-  if(distance > 0){
+  if(distance >= 0){
     while(thickness <= distance){
      thickness *= 2;
       folds++;
