@@ -6,9 +6,7 @@ function factorial(n){
   // Calculate the factorial here
   if(n > 12 || n < 0){
    throw new Error("RangeError");
-  } else if(n <= 1){
-      return 1;
-  } else {
+  }  else {
   	return n <= 1 ? 1 : n * factorial(n - 1);
   }
 }
