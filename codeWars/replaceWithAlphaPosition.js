@@ -16,7 +16,7 @@ function alphabetPosition(text) {
   let regex = /[A-Za-z]/gi;
   let findLetters = text.toLowerCase().match(regex);
   
-  for(let i = 0; i < findLetters.length - 1; i++){
+  for(let i = 0; i < findLetters.length; i++){
   	let idxLetter = idxLetters.indexOf(findLetters[i]);
     newArr.push(idxLetter + 1);
   }
