@@ -19,14 +19,15 @@ function dataReverse(data){
     
     if(newArr.length < 8){
       newArr.push(data[i]);
-    } else {
-   		finalArr.push(newArr.join(""));
+    } else {  
+      finalArr.push(newArr.join(""));
+      i--;
       newArr = [];
     }
   }
   
-  return finalArr.join(" ");
-  }
+  return finalArr.concat(newArr.join("")).reverse().join("").split("").map(Number);
+}
 
 const data1 = [1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0];
 const data2 = [1,0,1,0,1,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1];
