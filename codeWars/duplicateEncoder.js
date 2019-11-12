@@ -3,17 +3,19 @@
 function duplicateEncode(word){
   
   let newArr = [];
+  let lowerCase = word.toLowerCase();
   
-  let countLetters = word.split("").reduce((acc, letter) => {
+  let countLetters = lowerCase.split("").reduce((acc, letter) => {
     if(acc[letter]){
       acc[letter] += 1;
     } else {
       acc[letter] = 1;
-    }   
+    }
+    
     return acc
   }, {});
   
- for(let char of word){
+ for(let char of lowerCase){
   if(countLetters[char] > 1){
     newArr.push(")");
   } else {
@@ -27,4 +29,4 @@ function duplicateEncode(word){
 
 
 
-duplicateEncode("recede");
+duplicateEncode("Success");
