@@ -18,7 +18,6 @@ function squaredList(m,n){
   let total = 0;
   let idx = 0;
   let arr = [];
-  let inner = [];
 
   for(let i = m; i <= n; i++){
     for(let j = 1; j <= n; j++){
