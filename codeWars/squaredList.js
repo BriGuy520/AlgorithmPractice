@@ -155,3 +155,4 @@ function listSquared(m, n) {
     }
     return res
 }
+squaredList(42, 250);
