@@ -88,6 +88,7 @@ var Harshad = ( function() {
      */
     getSerie: function( count, start ) {
       // Your implementation goes here
+     
       let arr = [];
       let startInt;
       
@@ -109,7 +110,33 @@ var Harshad = ( function() {
       }
     }
     return arr;
-  ]
+
+    }
   };
 
+} () );
+
+
+// Answers to Learn From 
+
+var Harshad = { 
+  isValid(n) { return n % (''+n).split('').reduce((s, d) => s + +d, 0) == 0; },
+  getNext(n) { while (!this.isValid(++n)); return n; },
+  getSerie(count, start = 0) { 
+    for (var list = []; list.length < count; list.push(start))
+      start = this.getNext(start);
+    return list;
+  }
+}
+
+
+const isv=n=>n%[...n+""].reduce((a,b)=>+b+a,0)==0,
+      nxt=n=>isv(++n)?n:nxt(n),
+      gsr=(c,s=0,r=[])=>r.length<c?(n=nxt(s),gsr(c,n,r.concat(n))):r
+var Harshad = ( function() {
+  return {
+    isValid: isv,
+    getNext: nxt,
+    getSerie: gsr
+  }
 } () );
