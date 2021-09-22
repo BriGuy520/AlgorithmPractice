@@ -1,21 +1,17 @@
 // complete the function
 function solution(string) {
 
-  let strArr = string.split('');
-  let result;
+  let strArr = string.split("");
     
-  for(let i = 0; i < string.length; i++){
+  for(let i = 0; i < strArr.length; i++){
 
-    if(string.charCodeAt(i) >= 65 && string.charCodeAt(i) <= 90){
-      let end = string.slice(i, string.length);
-      let beginning = string.slice(0, i);
-      result = beginning.concat(' ', end);
+    if(strArr.join("").charCodeAt(i) >= 65 && strArr.join("").charCodeAt(i) <= 90){
+      strArr.splice(i, 0, " ");
+      i = i + 2;
     }
   }
 
-  console.log(result);
-
-  return string;
+  return strArr.join("");
 }
 
 
