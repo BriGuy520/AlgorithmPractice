@@ -5,9 +5,11 @@ function solution(string) {
     
   for(let i = 0; i < strArr.length; i++){
 
-    if(strArr.join("").charCodeAt(i) >= 65 && strArr.join("").charCodeAt(i) <= 90){
+    const isUpperCase = strArr.join("").charCodeAt(i);
+
+    if(isUpperCase >= 65 && isUpperCase <= 90){
       strArr.splice(i, 0, " ");
-      i = i + 2;
+      i += 2;
     }
   }
 
