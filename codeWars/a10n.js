@@ -22,7 +22,6 @@ function abbreviate(string){
     }
   });
 
-
   return newStr.join("");
 
 }
