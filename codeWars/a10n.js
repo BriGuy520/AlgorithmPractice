@@ -11,7 +11,7 @@
 
 function abbreviate(string){
 
-  let regex = /[\w]+(-*!*)/g;
+  const regex = /(\w)+|\W/g;
 
   const newStr = string.match(regex).map(word => {
     if(word.length > 3){
@@ -23,9 +23,11 @@ function abbreviate(string){
   });
 
   console.log(newStr);
+  return newStr.join("");
 
 }
 
 abbreviate("hello this is a test");
 abbreviate("Hello-elephant is weird!");
+abbreviate("Accessibility");
 abbreviate("elephant-rides are really fun!");
