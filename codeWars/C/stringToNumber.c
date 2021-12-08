@@ -2,7 +2,7 @@
 
 int string_to_number(const char *src) {
 
-    int convert = atoi(src);
+    int *convert = (int)(src);
 
     return convert;
 }
