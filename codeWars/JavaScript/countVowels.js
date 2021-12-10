@@ -6,18 +6,12 @@
 
 function getCount(str){
 
-    let vowelCount = 0;
-    const vowels = "aeiou";
-
-    str.split("").forEach(letter => {
-        if(vowels.includes(letter)){
-            vowelCount++;
-        }
-    });
-
-    console.log(vowelCount);
-
-    return vowelCount;
+    let vowels = /[aeiouAEIOU]/g;
+    if(str.match(vowels) != null){
+        return str.match(vowels).length;
+    } else {
+        return 0;
+    }
 }
 
-getCount("Hello this is working as it should");
+getCount("my pyx");
