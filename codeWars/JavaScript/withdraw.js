@@ -22,10 +22,7 @@ function withdraw(n){
     let bills = [0, 0, 0];
 
     while(n > 0){
-        if(n >= 150){
-            bills[0] += 1;
-            n = n - 100;
-        } else if(n % 100 == 0){
+        if(n % 100 == 0){
             bills[0] += 1;
             n = n - 100;   
         } else if(n % 50 != 0){
@@ -36,12 +33,10 @@ function withdraw(n){
             n = n - 50;
         }
     }
-
-    console.log(bills);
-
+    
     return bills;
 
 }
 
 
-withdraw(5730);
+withdraw(230);
