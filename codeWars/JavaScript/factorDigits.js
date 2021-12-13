@@ -14,7 +14,7 @@ function factDigits(n) {
   }
   const convert = new String(factor).length;
 
-  console.log(convert);
+  return convert
 }
 
 factDigits(977);

@@ -14,8 +14,6 @@ int square_sum(const int *values, size_t count){
     sum += values[i] * values[i];
   }
 
-  printf("sum = %d", sum);
-
   return sum;
 }
 
