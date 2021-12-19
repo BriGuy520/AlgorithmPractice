@@ -23,19 +23,56 @@
 // smallest(1000000) --> [1, 0, 6] or ...
 
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 
 long long* smallest(long long n) {
   // your code
 
-  char strInt[100];
-  int smallest = 
+  char StringInteger[100];
+  sprintf(StringInteger, "%d", n);
 
-  sprintf(strInt, "%d", n);
+  int digitLength = strlen(StringInteger);
+  int j = digitLength - 1;
+  long long k = 0;
+  int arr[] = {};
 
-  for(int i = 0; strInt[i] != '\0'; i++){
-      
+  while(n > 0){
+
+    int remainder = n % 10;
+
+    arr[j--] = remainder;
+
+    n = n / 10;
   }
+
+  int smallestNumber = arr[0];
+  int indexOfSmallestNumber;
+
+  for(int i = 0; i < digitLength; i++){
+    if(arr[i] <= smallestNumber){
+      smallestNumber = arr[i];
+      indexOfSmallestNumber = i;
+    }
+  }
+
+  if(indexOfSmallestNumber != 0){
+    int temp = arr[indexOfSmallestNumber];
+    
+    for(int i = indexOfSmallestNumber; i > 0; i--){
+      arr[i] = arr[i - 1];
+    }
+
+    arr[0] = temp;
+  }
+
+
+
+  for(int i = 0; i < digitLength; i++){
+    k = 10 * k + arr[i];
+  }
+
+  printf("%d\n", k);
 
   return 0;
 }
