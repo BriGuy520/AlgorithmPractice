@@ -72,7 +72,7 @@ long long* smallest(long long n) {
     k = 10 * k + arr[i];
   }
 
-  printf("%d\n", k);
+  printf("%d, %d\n", k, indexOfSmallestNumber);
 
   return 0;
 }
@@ -82,4 +82,5 @@ int main(){
 
 
   smallest(261235);
+  smallest(209917);
 }
