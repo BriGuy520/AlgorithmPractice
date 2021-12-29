@@ -8,9 +8,9 @@ char *rot13(char *src)
 
     for(int i = 0; src[i] != '\0'; i++){
 
-      if((src[i] >= 65 && src[i] <= 78) || (src[i] >= 95 && src[i] <= 108)){
+      if((src[i] >= 65 && src[i] < 78) || (src[i] >= 97 && src[i] < 110)){
         src[i] += 13;
-      } else if((src[i] >= 79 && src[i] <= 90) || (src[i] >= 109 && src[i] <= 122)){
+      } else if((src[i] >= 78 && src[i] <= 90) || (src[i] >= 110 && src[i] <= 122)){
         src[i] -= 13;
       }
     }
@@ -21,7 +21,7 @@ char *rot13(char *src)
 
 int main(){
 
-  char pass_in[] = "abcdefghijklmnop";
+  char pass_in[] = "Test";
 
   rot13(pass_in);
 

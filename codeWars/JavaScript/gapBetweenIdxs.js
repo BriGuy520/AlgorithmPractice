@@ -30,8 +30,6 @@ var largestDifference = function(data) {
     }
   }
 
-  console.log(largestGap);
-
   return largestGap;
 
 };
