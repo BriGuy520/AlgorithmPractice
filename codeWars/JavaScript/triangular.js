@@ -1,24 +1,17 @@
 function triangular( n ) {
   
-    let sum = 0;
-
     if(n <= 0){
-        return 0;
+      return 0;
     } else {
-        while(n > 0){
-            sum += n;
-            n--;
-        }
+      return n * (n + 1) / 2;
     }
-
-    console.log(sum);
-
-    return sum;
-
   }
 
-  triangular(4);
   triangular(3);
+  triangular(4);
+  triangular(5);
   triangular(-10);
   triangular(1);
   triangular(8802346516);
+  triangular(26376713);
+  triangular(872);
