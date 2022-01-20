@@ -16,12 +16,31 @@
 function cost (mins) { 
   
   let charge = 0;
+  let hour = 0;
   
-  if(mins <= 65){
-    charge = 30;
-  } else {
-    charge = Math.floor((mins - 60) / 30) * 10
+  while(mins > 5){
+
+    if(mins <= 65 && hour == 0){
+      charge = 30;
+      break;
+    } else if(hour == 0){
+      charge += 30;
+      mins = mins - 60;
+      hour++;
+    } else {
+      charge += 10;
+      mins = mins - 30;
+    }
   }
+
+  console.log(charge);
   
   return charge;
 } 
+
+
+cost(45);
+cost(63);
+cost(84);
+cost(102);
+cost(273);
