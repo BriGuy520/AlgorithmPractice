@@ -17,17 +17,13 @@
 
 # return masked string
 def maskify(cc):
-  
-  new_str = cc
     
   if len(cc) <= 4:
     return cc
   else:
     for idx in range(0, len(cc) - 4):
         cc = cc[:idx] + "#" + cc[idx + 1:]
-      
-    print(cc)
-
-    return new_str
+        
+    return cc
             
 maskify("4556364607935616")
