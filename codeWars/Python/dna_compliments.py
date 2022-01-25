@@ -13,7 +13,7 @@ def DNA_strand(dna):
         else:
             list_of_symbols[i] = 'G'
     
-    print("".join(list_of_symbols))
+    return "".join(list_of_symbols)
             
 DNA_strand('AAAA')
 DNA_strand('TTTT')

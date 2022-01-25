@@ -32,8 +32,6 @@ function cost (mins) {
       mins = mins - 30;
     }
   }
-
-  console.log(charge);
   
   return charge;
 } 
