@@ -13,6 +13,7 @@ function tribonacci(signature,n){
       }
 
       return signature;
+      
     } else {
       while(i < n){
         total += signature[i];
@@ -24,8 +25,6 @@ function tribonacci(signature,n){
   } else {
     return [];
   }
-
-  return signature;
 }
 
 tribonacci([1,2,3],10); // [1,2,3,6,11,20,37,68,125,230]
