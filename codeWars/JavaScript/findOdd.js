@@ -1,12 +1,22 @@
 function findOdd(A) {
   //happy coding!
 
-  for(let i = 0; i < A.length; i++){
+  let acc = {};
 
-    let regex = new RegExp('(?<!-)' + A[i], 'g');
+  A.forEach(value => {
     
-    if(A.join(" ").match(regex).length % 2 == 1){
-      return A[i];
+
+    if(acc[value]){
+      acc[value]++;
+    } else {
+      acc[value] = 1;
+    }
+
+  });
+  for(value in acc){
+    console.log(acc[value]);
+    if(acc[value] % 2 != 0){
+      return Number(value);
     }
   }
 }
