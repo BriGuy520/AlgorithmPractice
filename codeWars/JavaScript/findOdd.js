@@ -13,6 +13,7 @@ function findOdd(A) {
     }
 
   });
+  
   for(value in acc){
     console.log(acc[value]);
     if(acc[value] % 2 != 0){
