@@ -29,9 +29,7 @@ function likes(names) {
     }
   }
 
-  console.log(names.join(" "));
-
-  return names.join(" ");
+    return names.join(" ");
 }
 
 
