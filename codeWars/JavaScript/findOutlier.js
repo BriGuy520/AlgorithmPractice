@@ -1,7 +1,6 @@
 function findOutlier(integers){
   //your code here
   
-  let odd = 0;
   let even = 0;
   let oddValue = 0;
   let evenValue = 0;
@@ -9,7 +8,6 @@ function findOutlier(integers){
   for(let i = 0; i < integers.length; i++){
     
     if(integers[i] % 2 != 0){
-      odd++;
       oddValue = integers[i];
     } else {
       even++;
@@ -19,7 +17,7 @@ function findOutlier(integers){
   
   if(even > 1){
     return oddValue;
-  } else if(odd > 1) {
+  } else {
     return evenValue;
   }
 }
