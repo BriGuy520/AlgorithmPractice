@@ -2,21 +2,18 @@ function towerBuilder(nFloors) {
   // build here
 
   let outerArr = [];
-  let innerArr = [];
+  let value = "*";
+  let base = (nFloors * 2) - 1;
+  let innerArr = new Array(base);
   
   for(let i = 0; i < nFloors; i++){
 
-    let base = (i * 2) + 1
+    let row = (i * 2) + 1
 
-    for(let j = 0; j < base; j++){
-      innerArr.push("*");
-    }
-
-    outerArr.push(innerArr.join(""));
-    innerArr = [];
+    outerArr.push(value.repeat(row).padEnd(5, ' '));
     
   }
-  
+
   console.log(outerArr);
   
 }
