@@ -1,20 +1,28 @@
 function towerBuilder(nFloors) {
   // build here
-
   let outerArr = [];
   let value = "*";
   let base = (nFloors * 2) - 1;
-  let innerArr = new Array(base);
   
   for(let i = 0; i < nFloors; i++){
 
     let row = (i * 2) + 1
+    let buffer = (base - row) / 2;
+    let rowValue = value.repeat(row).split(" ");
 
-    outerArr.push(value.repeat(row).padEnd(5, ' '));
+    for(let j = 0; j < buffer; j++){
+      rowValue.unshift(" ");
+    }
+
+    for(let k = 0; k < buffer; k++){
+      rowValue.push(" ");
+    }
+
+    outerArr.push(rowValue.join(""));
     
   }
 
-  console.log(outerArr);
+  return outerArr;
   
 }
 
