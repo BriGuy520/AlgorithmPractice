@@ -31,7 +31,7 @@ function changer(str) {
         newStr[i] = String.fromCharCode(str.charCodeAt(i) - 31);
     }
 
-    if(newStr.join("").charCodeAt(i) > 64 && newStr.join("").charCodeAt(i) < 90){
+    if(newStr.join("").charCodeAt(i) > 64 && newStr.join("").charCodeAt(i) < 91){
       
       
       if(newStr.join("").charCodeAt(i) != 65 && newStr.join("").charCodeAt(i) != 69 && newStr.join("").charCodeAt(i) != 73 && newStr.join("").charCodeAt(i) != 79 && newStr.join("").charCodeAt(i) != 85){
@@ -47,3 +47,4 @@ function changer(str) {
 }
 
 changer("Hello World"); // Ifmmp xpsmE
+changer('FsZDYzah');
