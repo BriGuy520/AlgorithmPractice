@@ -1,18 +1,22 @@
 function countSmileys(arr) {
     
-  console.log(arr);
+  let smileCount = arr.join(" ").match(/([;:](?![o>(])-*~*)((?<!o)[)D])/g);
   
-  if(arr == null){
-    console.log(0);
+  if(!smileCount){
     return 0;
   } else {
-      console.log(arr.join(" ").match(/([;:](?![o>(])-*~*)((?<!o)[)D])/g).length);
-      return arr.join(" ").match(/([;:](?![o>(])-*~*)((?<!o)[)D])/g).length;
-    }
-
-  
+    console.log(smileCount.length);
+    return smileCount.length;
+  }  
 }
 
-countSmileys([':D',':~)',';~D',':)'])
-countSmileys([":o>" , ";>" , ":~)" , ";~)" , ":D" , ";~D" , ":)"])
+countSmileys([':D',':~)',';~D',':)']);
+countSmileys([":o>" , ";>" , ":~)" , ";~)" , ":D" , ";~D" , ":)"]);
+countSmileys([';]', ':[', ';*', ':$', ';-D']);
 countSmileys(["<font size='5'>Great work!</font>"]);
+countSmileys(["xyz:-)", ":-)xyz", ":---)"]);  
+countSmileys([':)', ';(', ';}', ':-D']);       // should return 2;
+countSmileys([';D', ':-(', ':-)', ';~)']);     // should return 3;
+countSmileys([';]', ':[', ';*', ':$', ';-D']); // shoule return 1;
+countSmileys([';)', ';)', ';)', ';>', ';>', ';->', ';>']); // should return 3;
+countSmileys([ ';~)', ':)', ':-)', ':--)' ]);
