@@ -1,11 +1,10 @@
 function countSmileys(arr) {
     
-  let smileCount = arr.join(" ").match(/([;:](?![o>(])-*~*)((?<!o)[)D])/g);
+  let smileCount = arr.join(" ").match(/([;:](?![o>(])~?-?)((?<!o)[)D])/g);
   
   if(!smileCount){
     return 0;
   } else {
-    console.log(smileCount.length);
     return smileCount.length;
   }  
 }
@@ -19,4 +18,4 @@ countSmileys([':)', ';(', ';}', ':-D']);       // should return 2;
 countSmileys([';D', ':-(', ':-)', ';~)']);     // should return 3;
 countSmileys([';]', ':[', ';*', ':$', ';-D']); // shoule return 1;
 countSmileys([';)', ';)', ';)', ';>', ';>', ';->', ';>']); // should return 3;
-countSmileys([ ';~)', ':)', ':-)', ':--)' ]);
+countSmileys([ ';~)', ':)', ':-)', ':--)' ]); // should return 
