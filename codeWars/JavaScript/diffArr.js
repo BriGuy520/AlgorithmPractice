@@ -2,15 +2,14 @@ function arrayDiff(a, b){
 
   let diff = [];
 
-  a.forEach(value => {
-    if(b.indexOf(value) == -1){
+   a.forEach(value => {
+    if (b.indexOf(value) == -1){
       diff.push(value);
     }
-    
+      
   });
 
   return diff;
-
 }
 
 
