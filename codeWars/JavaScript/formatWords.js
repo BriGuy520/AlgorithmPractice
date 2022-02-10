@@ -52,4 +52,3 @@ formatWords(['one','two', '',", "]);
 
 formatWords(['one', 'two', '', 'three', '', 'four']);
 
-
