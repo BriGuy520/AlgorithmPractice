@@ -3,13 +3,12 @@ function arrayDiff(a, b){
   let diff = [];
 
   a.forEach(value => {
-    if(b.indexOf(value)){
+    if(b.indexOf(value) == -1){
       diff.push(value);
     }
     
   });
 
-  console.log(diff);
   return diff;
 
 }
