@@ -4,8 +4,10 @@ function sum (numbers) {
     
     let sum = 0;
       
-    return numbers.forEach(number => number != null ? sum += number : 0);
-      
+    numbers.map(number => number != null ? sum = sum + number : 0);
+
+    console.log(sum);
   };
 
   sum([1, 5.2, 4, 0, -1]);
+  sum([]);
