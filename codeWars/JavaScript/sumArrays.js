@@ -1,12 +1,8 @@
 // Sum Numbers
 function sum (numbers) {
     "use strict";
-    
-    let sum = 0;
       
-    numbers.forEach(number => number != null ? sum = sum + number : 0);
-
-    return sum;
+    return numbers.reduce((sum, number) => number != null ? sum += number : 0, 0);
   };
 
   sum([1, 5.2, 4, 0, -1]);
