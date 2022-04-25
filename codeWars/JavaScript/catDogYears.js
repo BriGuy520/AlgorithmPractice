@@ -10,6 +10,4 @@ var humanYearsCatYearsDogYears = function(humanYears) {
         let dogYears = 24 + ((humanYears - 2) * 5); 
         return [humanYears, catYears, dogYears]
     }
-
-    return [0,0,0];
   }
