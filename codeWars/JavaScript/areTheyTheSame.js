@@ -1,7 +1,7 @@
 function comp(array1, array2){
   //your code here
   
-  if(array1.length === 0 && array2.length === 0){
+  if(!array1 && !array2){ 
     return true;
   } else {
 
