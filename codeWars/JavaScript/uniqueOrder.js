@@ -11,7 +11,13 @@ var uniqueInOrder=function(iterable){
         if(current != prev) answer.push(current);
     }
 
-
+    let answer2 = iterable.split("").reduce((acc, element, i, arr) => {
+        console.log(arr);
+        console.log(i);
+        if(arr[i] != arr[i - 1]) acc.concat(element);
+        
+    }, []);
+    console.log(answer2);
     return answer;
 
   }
