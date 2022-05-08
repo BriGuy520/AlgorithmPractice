@@ -1,16 +1,18 @@
-let toJadenCase = function(str){
+String.prototype.toJadenCase = function(){
 
     let newStr = [];
 
-    for(let i = 0; i < str.length; i++){
-        if(str[i - 1] === ' '){
-            newStr.push(str[i].toUpperCase());
+    for(let i = 0; i < this.length; i++){
+        if(this[i - 1] === ' '){
+            newStr.push(this[i].toUpperCase());
         } else {
-            newStr.push(str[i]);
+            newStr.push(this[i]);
         }
     }
 
     return newStr.join("");
 }
 
-toJadenCase("How can mirrors be real if our eyes aren't real");
+let str = "How can mirrors be real if our eyes aren't real";
+
+console.log(str.toJadenCase());
