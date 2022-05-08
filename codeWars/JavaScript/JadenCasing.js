@@ -3,7 +3,7 @@ String.prototype.toJadenCase = function(){
     let newStr = [];
 
     for(let i = 0; i < this.length; i++){
-        if(this[i - 1] === ' '){
+        if(this[i - 1] === ' ' || i === 0){
             newStr.push(this[i].toUpperCase());
         } else {
             newStr.push(this[i]);
