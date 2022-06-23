@@ -1,19 +1,27 @@
 function queueTime(customers, n) {
   //TODO
   let totalTime = 0;
+  let checkout = customers.slice(0, n);
+  let line = customers(n, customers.length);
+  let j = 0;
+  
+  if(n >= customers.length){
+    return Math.max(...customers);
+  }
     
-  for(let i = 0; i < customers.length; i += n){
-    if(n >= customers.length){
-      return customers[customers.length - 1];
+  for(let i = 0; i < checkout.length; i++){
+    
+    if(checkout[i] > checkout[i + 1]){
+      checkout[i] = checkout[i] - checkout[i + 1];
+      checkout[i + 1] = line[j++];
     } else {
-      let line = customers.slice(i, n + i);
-      console.log(line);
-      totalTime += Math.max(...line);
+      checkout[i + 1] = checkout[i + 1] - checkout[i];
+      checkout[i] = line[j++];
     }
+    
+    line.shift();
   }
 
   return totalTime;
   
 }
-
-queueTime([2,2,3,3,4,4], 2);
