@@ -7,6 +7,7 @@ function queueTime(customers, n) {
   let line = customers.slice(n, customers.length);
   let i = 0;
 
+  console.log(checkout);
   
   if(n >= customers.length){
     return Math.max(...customers);
@@ -23,15 +24,18 @@ function queueTime(customers, n) {
     totalTime += shortest;
     for(let j = 0; j < checkout.length; j++){
       checkout[j] -= shortest;
+
+      console.log(checkout[j]);
       
-      if(checkout[j] === 0){
+      if(checkout[j] === 0 && line[i]){
         checkout[j] = line[i++];
       }    
     }
   }
 
   console.log(checkout);
+
   return totalTime += Math.max(...checkout);
 }
 
-queueTime([37,31,29,8,12,44,3,16,26,14,1,25,25,38,42,47,23,8,49,23,20,40], 3);
+queueTime([19,27,22,8,36,29,2,10,5,41,38,18,26,40,1,32,1,50,24,47,40,31,29,6,3,26,47], 4);
