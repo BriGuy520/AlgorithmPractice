@@ -30,7 +30,8 @@ function queueTime(customers, n) {
     }
   }
 
+  console.log(checkout);
   return totalTime += Math.max(...checkout);
 }
 
-queueTime([28,14,40,14,39,42,49,22,47,39,38,28,26,15,30,27,11,47,32,41], 3);
+queueTime([37,31,29,8,12,44,3,16,26,14,1,25,25,38,42,47,23,8,49,23,20,40], 3);
