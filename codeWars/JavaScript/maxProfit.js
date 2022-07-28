@@ -1,16 +1,22 @@
 function getMostProfitFromStockQuotes(quotes) {
 
+  let maxValue = quotes.indexOf(Math.max(...quotes));
+  let subArr = quotes.slice(0, maxValue  + 1);
+  let i = 0;
   let profit = 0;
 
-  if(quotes.indexOf(Math.max(...quotes)) === 0){
-    console.log(profit);
-    return profit;
-  }
-  
-  for(let i = 0; i < quotes.indexOf(Math.max(...quotes)); i++){
-    
-    profit += Math.max(...quotes) - quotes[i];
-    
+  console.log(subArr);
+
+  while(i < subArr.length){
+
+    profit += Math.max(...subArr) - subArr[i];
+
+    i++;
+
+    if(i < quotes.length && i === subArr.length - 1){
+      subArr = quotes.slice(subArr.length, quotes.length);
+      maxValue = subArr.indexOf(Math.max(...subArr));
+    }
   }
 
   console.log(profit);
