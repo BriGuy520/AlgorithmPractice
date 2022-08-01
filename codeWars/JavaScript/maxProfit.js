@@ -1,25 +1,17 @@
 function getMostProfitFromStockQuotes(quotes) {
 
-  let maxValue = quotes.indexOf(Math.max(...quotes));
-  let subArr = quotes.slice(0, maxValue  + 1);
-  let i = 0;
+  let sellPrice = Math.max(...quotes);
   let profit = 0;
 
-  console.log(subArr);
+  while(quotes.length > 0){
+    
+    profit += sellPrice - quotes[0];
+    quotes.shift();
 
-  while(i < subArr.length){
-
-    profit += Math.max(...subArr) - subArr[i];
-
-    i++;
-
-    if(i < quotes.length && i === subArr.length - 1){
-      subArr = quotes.slice(subArr.length, quotes.length);
-      maxValue = subArr.indexOf(Math.max(...subArr));
-    }
+    sellPrice = Math.max(...quotes);
   }
 
-  console.log(profit);
+  return profit;
 }
 
 getMostProfitFromStockQuotes([ 1, 2, 3, 4, 5, 6 ]);
