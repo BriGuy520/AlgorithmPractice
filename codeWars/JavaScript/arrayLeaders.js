@@ -11,6 +11,10 @@ function arrayLeaders(numbers){
       if(rightSum < numbers[i] && j === numbers.length - 1){
         arrLeaders.push(numbers[i]);
       }
+
+      if(rightSum > numbers[i]){
+        break;
+      }
     }
     
     rightSum = 0;
@@ -19,7 +23,6 @@ function arrayLeaders(numbers){
       arrLeaders.push(numbers[i]);
     }
   }
-  
   
   return arrLeaders;
 
