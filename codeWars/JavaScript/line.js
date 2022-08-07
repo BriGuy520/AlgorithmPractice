@@ -7,12 +7,6 @@ function queueTime(customers, n) {
   let line = customers.slice(n, customers.length);
   let i = 0;
 
-  console.log(checkout);
-  
-  if(n >= customers.length){
-    return Math.max(...customers);
-  }
-
   if(customers.length === 0){
     return 0;
   }
@@ -32,8 +26,6 @@ function queueTime(customers, n) {
       }    
     }
   }
-
-  console.log(checkout);
 
   return totalTime += Math.max(...checkout);
 }
