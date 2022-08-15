@@ -3,8 +3,8 @@ function automorphic(n){
   let numStr = n + "";
   let squared = n * n + "";
   
-  for(let i = squared.length - 1; i >= numStr.length - 1; i--){
-    if(squared[i] != numStr[i - numStr.length - 1]){
+  for(let i = 0; i < numStr.length; i++){
+    if(squared[squared.length - 1 - i] != numStr[numStr.length - 1 - i]){
 
       return "Not!!";
     }
