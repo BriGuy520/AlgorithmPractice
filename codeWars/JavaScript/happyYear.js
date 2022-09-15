@@ -1,5 +1,6 @@
 function nextHappyYear(year){
   //your code here
+  year++;
   let strYear = year+"";
       
   for(let i = 0; i < strYear.length; i++){
@@ -19,3 +20,4 @@ function nextHappyYear(year){
 
 
 nextHappyYear(1990);
+nextHappyYear(1394);
