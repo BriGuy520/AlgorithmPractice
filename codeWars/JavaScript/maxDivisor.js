@@ -1,13 +1,9 @@
 function maxMultiple(divisor, bound){
   //your code here
-  let high = 0;
-  
-  for(let i = 1; i <= bound; i++){
+  for(let i = bound; i >= divisor; i--){
     if(i % divisor === 0){
-        high = i;
+      return i;
     }
   }
-  
-  return high;
 }
 
