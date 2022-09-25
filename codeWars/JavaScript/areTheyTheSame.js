@@ -3,6 +3,8 @@ function comp(array1, array2){
   
   if(!array1 && !array2){ 
     return true;
+  } else if(array1 == null || array2 == null){
+    return false;
   } else {
 
     let squareRoot = array2.map(num => Math.sqrt(num)).sort((a, b) => a - b);
@@ -17,9 +19,6 @@ function comp(array1, array2){
   
     return true;
   }
-
-
-  
 }
 
 let a = [121, 144, 19, 161, 19, 144, 19, 11];  
