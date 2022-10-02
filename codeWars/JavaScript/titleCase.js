@@ -29,14 +29,10 @@ function titleCase(title, minorWords = "") {
 
   let minorWordsArr = minorWords.toLowerCase().split(" ");
 
-
   return title.toLowerCase().split(" ").reduce((a, v, i) => {
-    if(minorWordsArr.indexOf(v) == -1 || i == 0){
-      let newStr = v.substring(0, 1).toUpperCase().concat(v.substring(1, v.length));
-      a.push(newStr);
-    } else {
-      a.push(v);
-    } 
+    let newStr = v.substring(0, 1).toUpperCase().concat(v.substring(1, v.length));
+    
+    minorWordsArr.indexOf(v) == -1 || i == 0 ? a.push(newStr) : a.push(v);
 
     return a;
   }, []).join(" ");
