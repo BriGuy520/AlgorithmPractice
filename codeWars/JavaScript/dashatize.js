@@ -1,8 +1,5 @@
 function dashatize(num) {
   //get 'em 
-  let numArr = [];
-  
-  
   if(num === 'NaN') return "NaN";
   
   return num.toString().split('').reduce((a,v,i) => {
