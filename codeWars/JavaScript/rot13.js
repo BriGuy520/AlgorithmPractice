@@ -6,30 +6,35 @@
 // as they are. Only letters from the latin/english alphabet should be shifted, like in the 
 // original Rot13 "implementation".
 
-
-
 function rot13(message){
 
     let newString = '';
 
-    let alphabet = 'abcdefghijklmnopqrstuvwxyz';
-    let upperAlphabet = alphabet.toUpperCase();
+    let lowerAlphabet = 'abcdefghijklmnopqrstuvwxyz';
+    let upperAlphabet = lowerAlphabet.toUpperCase();
 
     for(let i = 0; i < message.length; i++){
 
-        let lowerIdx = alphabet.indexOf(message[i]);
+        let lowerIdx = lowerAlphabet.indexOf(message[i]);
         let upperIdx = upperAlphabet.indexOf(message[i]);
 
         if(lowerIdx !== -1){
-            newString += lowerIdx + 13 < 25 ? alphabet[lowerIdx + 13] : alphabet[(lowerIdx + 13) % 26] ;
+            newString += rotConversion(lowerIdx, lowerAlphabet);
         } else if(upperIdx !== -1){
-            newString += upperIdx + 13 < 25 ? upperAlphabet[upperIdx + 13] : upperAlphabet[(upperIdx + 13) % 26] ;
+            newString += rotConversion(upperIdx, upperAlphabet);
         } else {
             newString += message[i];
         }
     }
 
     return newString;
+}
+
+
+function rotConversion(idx, alphaCase){
+
+    return idx + 13 < 25 ? alphaCase[idx + 13] : alphaCase[(idx + 13) % 26] ;
+
 }
 
 rot13('DKJSDF');
