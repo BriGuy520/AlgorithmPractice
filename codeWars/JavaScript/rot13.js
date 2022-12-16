@@ -13,19 +13,25 @@ function rot13(message){
     let newString = '';
 
     let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    let upperAlphabet = alphabet.toUpperCase();
 
     for(let i = 0; i < message.length; i++){
 
-        let rotIdx = alphabet.indexOf(message[i]);
-        console.log(rotIdx);
+        let lowerIdx = alphabet.indexOf(message[i]);
+        let upperIdx = upperAlphabet.indexOf(message[i]);
 
-        newString += !rotIdx ? message[i] : rotIdx + 13 < 25 ? alphabet[rotIdx + 13] : alphabet[(rotIdx + 13) % 26] ;
+        if(lowerIdx !== -1){
+            newString += lowerIdx + 13 < 25 ? alphabet[lowerIdx + 13] : alphabet[(lowerIdx + 13) % 26] ;
+        } else if(upperIdx !== -1){
+            newString += upperIdx + 13 < 25 ? upperAlphabet[upperIdx + 13] : upperAlphabet[(upperIdx + 13) % 26] ;
+        } else {
+            newString += message[i];
+        }
     }
 
-    console.log(newString);
+    return newString;
 }
 
-rot13('test!'); // grfg
+rot13('DKJSDF');
+rot13('test!930');
 rot13('Test');
-rot13('Blob'); //
-rot13("chatGPT");
