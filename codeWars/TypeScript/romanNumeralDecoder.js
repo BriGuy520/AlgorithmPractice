@@ -3,28 +3,37 @@ exports.__esModule = true;
 exports.solution = void 0;
 function solution(roman) {
     var romanBase10 = 0;
+    var romanNumeralValues = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        "L": 50,
+        "C": 100,
+        "D": 500,
+        "M": 1000
+    };
     for (var i = 0; i < roman.length; i++) {
         switch (roman[i]) {
             case 'I':
                 romanBase10 += 1;
                 break;
             case 'V':
-                romanBase10 += 5;
+                romanBase10 += roman[i - 1] === "I" ? 3 : 5;
                 break;
             case 'X':
-                romanBase10 += 10;
+                romanBase10 += roman[i - 1] === "I" ? 8 : 10;
                 break;
             case 'L':
-                romanBase10 += 50;
+                romanBase10 += roman[i - 1] === "I" ? 48 : 50;
                 break;
             case 'C':
-                romanBase10 += 100;
+                romanBase10 += roman[i - 1] === "I" ? 3 : 100;
                 break;
             case 'D':
-                romanBase10 += 500;
+                romanBase10 += roman[i - 1] === "I" ? 3 : 500;
                 break;
             case 'M':
-                romanBase10 += 1000;
+                romanBase10 += roman[i - 1] === "I" ? 3 : 1000;
                 break;
             default:
                 romanBase10 += 0;
@@ -36,3 +45,7 @@ function solution(roman) {
 }
 exports.solution = solution;
 solution("XXI");
+solution("MDCLXVI");
+solution("MMVIII");
+solution("IV");
+solution("MXIX"); // 1019

@@ -8,22 +8,22 @@ export function solution(roman: string): number {
                 romanBase10 += 1;
                 break;
             case 'V':
-                romanBase10 += 5;
+                romanBase10 += roman[i - 1] === "I" ? 3 : 5;
                 break;
             case 'X':
-                romanBase10 += 10;
+                romanBase10 += roman[i - 1] === "I" ? 8 : 10;
                 break;
             case 'L':
-                romanBase10 += 50;
+                romanBase10 += roman[i - 1] === "I" ? 48 : 50;
                 break;
             case 'C':
-                romanBase10 += 100;
+                romanBase10 += roman[i - 1] === "I" ? 98 : 100;
                 break;
             case 'D':
-                romanBase10 += 500;
+                romanBase10 += roman[i - 1] === "I" ? 498 : 500;
                 break;
             case 'M':
-                romanBase10 += 1000;
+                romanBase10 += roman[i - 1] === "I" ? 998 : 1000;
                 break;
             default: 
                 romanBase10 += 0;
@@ -31,11 +31,12 @@ export function solution(roman: string): number {
         }
     }
 
-    console.log(romanBase10);
-
-
     return romanBase10;
 
 }
 
 solution("XXI");
+solution("MDCLXVI");
+solution("MMVIII");
+solution("IV");
+solution("MXIX"); // 1019
