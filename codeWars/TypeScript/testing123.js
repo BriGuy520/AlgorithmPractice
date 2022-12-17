@@ -1,9 +1,8 @@
 function number(array) {
-    for (var i = 1; i <= array.length; i++) {
-        array[i - 1] = (i.toString() + ": ").concat(array[i - 1]);
-    }
-    console.log(array);
-    return array;
+    return array.reduce(function (a, v, i) {
+        a.push(v.concat(i + 1).toString());
+        return a;
+    }, []);
 }
 number([]);
 number(['a', 'b', 'c']);

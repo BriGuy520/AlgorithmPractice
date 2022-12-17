@@ -1,10 +1,10 @@
 function number(array: string[]): string[] {
 
-    for(let i: number = 1; i <= array.length; i++){
-        array[i - 1] = (i.toString() + ": ").concat(array[i - 1]);
-    }
+    return array.reduce((a: string[],v: string, i: any): string[] => {
+       a.push((i + 1).toString().concat(": " + v));
 
-    return array;
+       return a;
+    }, []);
 }
 
 number([]);
