@@ -35,8 +35,10 @@ export function solution(roman: string): number {
 
 }
 
+
 solution("XXI");
 solution("MDCLXVI");
 solution("MMVIII");
 solution("IV");
 solution("MXIX"); // 1019
+solution("CM");
