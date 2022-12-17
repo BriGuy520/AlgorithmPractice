@@ -5,11 +5,7 @@ def pentagonal(n):
   
   total = 1
     
-  for x in range(1, n):
- 
-    total = total + (x * 5)  
-  
-  return total
+  return  + (n * 5)
   
 
 pentagonal(8)
