@@ -4,8 +4,6 @@ function number(array: string[]): string[] {
         array[i - 1] = (i.toString() + ": ").concat(array[i - 1]);
     }
 
-    console.log(array);
-
     return array;
 }
 
