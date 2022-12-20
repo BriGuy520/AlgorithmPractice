@@ -1,12 +1,11 @@
 var stockList = function (listOfArt, listOfCat) {
     // your code
+    var _a, _b;
     var answer = "";
     var total = 0;
     for (var i = 0; i < listOfCat.length; i++) {
         for (var j = 0; j < listOfArt.length; j++) {
-            if (listOfArt[j].indexOf(listOfCat[i]) === 0) {
-                total += listOfArt[j].match(/\d/g) !== null ? parseInt(listOfArt[j].match(/\d/g).join("")) : 0;
-            }
+            total += listOfArt[j].indexOf(listOfCat[i]) === 0 ? parseInt((_b = (_a = listOfArt[j]) === null || _a === void 0 ? void 0 : _a.match(/\d/g)) === null || _b === void 0 ? void 0 : _b.join("")) : 0;
         }
         answer += i + 1 === listOfCat.length ? "(".concat(listOfCat[i], ": ").concat(total, ")") : "(".concat(listOfCat[i], ": ").concat(total, ") - ");
         total = 0;
