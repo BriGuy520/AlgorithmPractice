@@ -4,14 +4,13 @@ exports.longestRepetition = void 0;
 function longestRepetition(text) {
     var longest = 0;
     var character = '';
-    for (var i = 0; i < text.length; i++) {
-        var matches = text.match(new RegExp("^".concat(text[i], "*"), 'g')).join('');
+    while (text.length > 0) {
+        var matches = text.match(new RegExp("^".concat(text[0], "*"), 'g')).join('');
         if (matches.length > longest) {
             longest = matches.length;
-            character = text[i];
+            character = text[0];
         }
         text = text.slice(matches.length, text.length);
-        console.log(text);
     }
     console.log([character, longest]);
     return [character, longest];
