@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // Divisors of 42 are : 1, 2, 3, 6, 7, 14, 21, 42. 
 // These divisors squared are: 1, 4, 9, 36, 49, 196, 441, 1764. 
 // The sum of the squared divisors is 2500 which is 50 * 50, a square!
@@ -16,15 +14,10 @@
 // list_squared(1, 250) --> [[1, 1], [42, 2500], [246, 84100]]
 // list_squared(42, 250) --> [[42, 2500], [246, 84100]]
 
->>>>>>> master
 function squaredList(m,n){
   let total = 0;
   let idx = 0;
   let arr = [];
-<<<<<<< HEAD
-  let inner = [];
-=======
->>>>>>> master
 
   for(let i = m; i <= n; i++){
     for(let j = 1; j <= n; j++){
@@ -43,9 +36,6 @@ function squaredList(m,n){
  return arr; 
 }
 
-<<<<<<< HEAD
-squaredList(42, 250);
-=======
 squaredList(42, 250);
 
 // Other peoples solutions
@@ -181,4 +171,3 @@ function listSquared(m, n) {
     return res
 }
 squaredList(42, 250);
->>>>>>> master

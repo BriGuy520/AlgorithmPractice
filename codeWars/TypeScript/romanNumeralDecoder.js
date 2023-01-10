@@ -1,9 +1,9 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.solution = void 0;
 function solution(roman) {
-    var romanBase10 = 0;
-    for (var i = 0; i < roman.length; i++) {
+    let romanBase10 = 0;
+    for (let i = 0; i < roman.length; i++) {
         switch (roman[i]) {
             case 'I':
                 romanBase10 += 1;
@@ -31,9 +31,6 @@ function solution(roman) {
                 break;
         }
     }
-
-    console.log(romanBase10);
-
     return romanBase10;
 }
 exports.solution = solution;

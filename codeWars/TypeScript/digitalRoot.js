@@ -1,7 +1,6 @@
 function digitalRoot(n) {
-    var strArr = n.toString().split('');
-    var answer = strArr.reduce(function (a, v) { return parseInt(a) + parseInt(v); }, 0);
-    console.log(answer);
+    let strArr = n.toString().split('');
+    let answer = strArr.reduce((a, v) => parseInt(a) + parseInt(v), 0);
     return answer.toString().length > 1 ? digitalRoot(answer) : answer;
 }
 digitalRoot(19);
