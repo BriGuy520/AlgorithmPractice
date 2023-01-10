@@ -8,12 +8,10 @@ def count_consonants(text):
     prev = []
 
     for char in range(len(text)):
-        if text[char].lower() in consonants and text[char] not in prev:
+        if text[char].lower() in consonants and text[char].lower() not in prev:
 
             total += 1
             prev.append(text[char].lower())
-            print(total)
-            print(prev)
 
     return total
 
