@@ -5,8 +5,11 @@ def is_defended(attackers, defenders):
     attacker_win = 0
     attacker_total = sum(attackers)
 
-    print(attacker_total, defender_total)
-
+    if len(attackers) > len(defenders):
+        defenders.extend([0] * (len(attackers) - len(defenders)))
+    elif len(attackers) < len(defenders): 
+        attackers.extend([0] * (len(defenders) - len(attackers)))
+        
     for x, y in zip(attackers, defenders):
 
         if x < y:
@@ -26,17 +29,4 @@ def is_defended(attackers, defenders):
         return False
     else:
 
-        return True if defender_total > attacker_total else False
-
-
-
-
-
-    
-
-
-
-attackers = [1, 3, 5, 6, 8]
-defenders = [2, 4]
-
-is_defended(attackers, defenders) # True
+        return True if defender_total >= attacker_total else False

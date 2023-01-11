@@ -1,6 +1,6 @@
 function number(array) {
-    return array.reduce(function (a, v, i) {
-        a.push(v.concat(i + 1).toString());
+    return array.reduce((a, v, i) => {
+        a.push((i + 1).toString().concat(": " + v));
         return a;
     }, []);
 }
