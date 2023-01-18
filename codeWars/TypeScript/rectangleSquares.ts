@@ -24,8 +24,6 @@ const sqInRect = (l:number, w:number): null|number[] => {
 
   }
 
-  console.log(answer);
-
   return answer;
 }
 
