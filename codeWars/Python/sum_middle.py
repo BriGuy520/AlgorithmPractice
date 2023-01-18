@@ -1,4 +1,4 @@
-def sum_array(arr):
+def sum_middle(arr):
     
     return 0 if not arr else sum(sorted(arr)[1:len(arr) - 1])
 
