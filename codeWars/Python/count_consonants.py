@@ -3,8 +3,9 @@ def count_consonants(s):
   consonants = 'bcdfghjklmnpqrstvwxyz'
   count = 0
   
-  for c in s.lower(): 
-    if c in consonants: count += 1
+  answer = sum(1 for c in s.lower() if c in consonants)
+  
+  print(answer)
     
   return count
 

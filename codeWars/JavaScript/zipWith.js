@@ -2,11 +2,8 @@ function zipWith(fn,a0,a1) {
   
   let answer = [];
   
-  for(let i = 0; i < Math.min(a0.length, a1.length); i++){
-    answer.push(fn(a0[i], a1[i]));
-  }
+  for(let i = 0; i < Math.min(a0.length, a1.length); i++) answer.push(fn(a0[i], a1[i]));
 
-  console.log(answer);
   return answer;
 }
 
