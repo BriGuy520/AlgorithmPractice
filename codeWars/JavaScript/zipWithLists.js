@@ -17,7 +17,6 @@ while(linkOne.next){
   linkOne = linkOne.next;
 }
 
-console.log(linkOne);
 
 linkOne.next = new Node(Math.max(32));
 
