@@ -6,10 +6,8 @@ function computeDepth (x){
 
   while(answer.length < 10){
 
-    x = x * ++i;
-
-    let splitInt = x+"";
-  
+    let total = x * ++i;
+    let splitInt = total+"";
   
     let uniqueValues = splitInt.split("").filter(num => !answer.includes(num));
   
