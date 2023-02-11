@@ -8,19 +8,22 @@ function computeDepth (x){
 
     let total = x * ++i;
     let splitInt = total+"";
+
+    console.log(total, i);
   
     let uniqueValues = splitInt.split("").filter(num => !answer.includes(num));
-  
-    answer.push(...new Set(...uniqueValues));
 
+    console.log(uniqueValues);
   
+    answer.push(...new Set(uniqueValues));
+
+    console.log(answer);
   }
-  
-  console.log(i);
  
-
   return i;
 }
 
 
-computeDepth(42); // 9
+// computeDepth(42); // 9
+// computeDepth(197); // 10
+computeDepth(380);
