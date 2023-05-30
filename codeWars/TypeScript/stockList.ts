@@ -8,12 +8,13 @@ const stockList = (listOfArt:string[], listOfCat:string[]):string => {
   
   for(let i: number = 0; i < listOfCat.length; i++){
     for(let j: number = 0; j < listOfArt.length; j++){
-
       total += listOfArt[j].indexOf(listOfCat[i]) === 0 ? parseInt(listOfArt[j].match(/\d/g)!.join("")) : 0;
     }
   
     answer +=  i + 1 === listOfCat.length ? `(${listOfCat[i]} : ${total})` : `(${listOfCat[i]} : ${total}) - `;
+
     if(total > 0) stock = true;
+    
     total = 0;
   }
   

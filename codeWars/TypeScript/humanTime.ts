@@ -16,8 +16,6 @@ function humanReadable(seconds: number): string {
 
   }
 
-  console.log(`${hour < 10 ? `0${hour}`:`${hour}`}:${minutes < 10 ? `0${minutes}`:`${minutes}`}:${timeLeft  < 10 ? `0${timeLeft}`:`${timeLeft}`}`);
-
   return `${hour < 10 ? `0${hour}`:`${hour}`}:${minutes < 10 ? `0${minutes}`:`${minutes}`}:${timeLeft  < 10 ? `0${timeLeft}`:`${timeLeft}`}`;
 }
 
