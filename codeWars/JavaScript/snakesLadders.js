@@ -13,8 +13,6 @@ var snakesAndLadders = function(board, dice) {
 
   }
 
-  console.log(boardIdx);
-  
   return boardIdx;
 }
 
