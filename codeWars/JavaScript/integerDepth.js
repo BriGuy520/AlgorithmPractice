@@ -16,8 +16,6 @@ function computeDepth (x){
     console.log(uniqueValues);
   
     answer.push(...new Set(uniqueValues));
-
-    console.log(answer);
   }
  
   return i;
@@ -26,4 +24,4 @@ function computeDepth (x){
 
 // computeDepth(42); // 9
 // computeDepth(197); // 10
-computeDepth(380);
+computeDepth(23);
