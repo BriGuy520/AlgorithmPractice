@@ -1,21 +1,17 @@
-export function rentalCarCost(d: number): number {
+function rentalCarCost(d: number): number {
   // Your solution here
   
-  let finalTotal: number = 0;
-  const originalTotal: number = d * 40;
+  let total: number = d * 40;
   
   if(d >= 7){
-    finalTotal = originalTotal - 50;
+    total = total - 50;
     
   } else if(d >= 3){
 
-    finalTotal = originalTotal - 20;
-  } else {
-    
-    finalTotal = originalTotal;
+    total = total - 20;
   }
   
-  return finalTotal;
+  return total;
 }
 
 rentalCarCost(3) // 100

@@ -1,8 +1,0 @@
-{
-  "devDependencies": {
-    "@types/node": "^18.11.16"
-  },
-  "dependencies": {
-    "es6-set": "^0.1.6"
-  }
-}
