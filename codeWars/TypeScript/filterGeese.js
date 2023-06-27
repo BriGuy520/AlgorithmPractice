@@ -1,3 +1,4 @@
+"use strict";
 function gooseFilter(birds) {
     const geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
     const filteredGeese = birds.filter((bird) => geese.indexOf(bird) === -1);

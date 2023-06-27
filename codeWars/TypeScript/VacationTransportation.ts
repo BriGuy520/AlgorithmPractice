@@ -11,6 +11,8 @@ function rentalCarCost(d: number): number {
     total = total - 20;
   }
   
+  console.log(total);
+
   return total;
 }
 
