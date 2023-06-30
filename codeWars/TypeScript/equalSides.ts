@@ -8,15 +8,14 @@ export function findEvenIndex(arr: number[]): number {
   //Code goes here!
   while(i < arr.length - 1 / 2){
     
-    leftTotal += arr[i];
-    
-    for(let j: number = arr.length - 1; j > i + 1; j--){
+    for(let j: number = arr.length - 1; j > i; j--){
       rightTotal += arr[j];
     }
     
     if(leftTotal === rightTotal){
-      return i + 1;
+      return i;
     } else {
+      leftTotal += arr[i];
       rightTotal = 0;
     }
     

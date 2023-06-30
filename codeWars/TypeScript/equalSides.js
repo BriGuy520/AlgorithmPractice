@@ -8,14 +8,14 @@ function findEvenIndex(arr) {
     var rightTotal = 0;
     //Code goes here!
     while (i < arr.length - 1 / 2) {
-        leftTotal += arr[i];
-        for (var j_1 = arr.length - 1; j_1 > i + 1; j_1--) {
+        for (var j_1 = arr.length - 1; j_1 > i; j_1--) {
             rightTotal += arr[j_1];
         }
         if (leftTotal === rightTotal) {
-            return i + 1;
+            return i;
         }
         else {
+            leftTotal += arr[i];
             rightTotal = 0;
         }
         i++;
