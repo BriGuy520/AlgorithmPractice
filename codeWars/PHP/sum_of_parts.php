@@ -2,21 +2,22 @@
 
 function partsSums($ls) {
     // your code
-
-    $total = [];
-
-    if(count($ls) == 0) return 0;
-
-    while(count($ls) > 0){
+    
+    $total_arr = [];
+    $sum = array_sum($ls);
+    
+    if(count($ls) == 0) return [0];
+    
+    array_push($total_arr, $sum);
+    
+    for($i = 0; $i < count($ls); $i++){
         
-        array_push($total, array_sum($ls));
-        
-        $ls = array_slice($ls, 1);
+        array_push($total_arr, $sum - $ls[$i]);
+      
+        $sum -= $ls[$i];
     }
-
-    array_push($total, 0);
-
-    return $total;
-}
+      
+    return $total_arr;
+  }
 
   ?>
