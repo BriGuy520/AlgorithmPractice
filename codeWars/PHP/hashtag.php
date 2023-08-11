@@ -29,6 +29,10 @@ function generateHashtag($str) {
 </head>
 <body>
    
-    <p><?php echo generateHashtag("this is a string"); ?></p>
+    <p><?php echo generateHashtag("A"); ?></p>
+    <p><?php echo generateHashtag("A"); ?></p>
+    <p><?php echo generateHashtag("code " . str_repeat(" ", 140) . "wars"); ?></p>
+
+
 </body>
 </html>
