@@ -8,25 +8,16 @@
 // 5, 9 --> "1110" (5 + 9 = 14 in decimal or 1110 in binary)
 
 function addBinary(a:number,b:number):string {
-  let decimal: number = a + b;
+  const decimal: number = a + b;
   let quotient: number = decimal;
   let remainder: number;
-  let binary: number[] = [];
+  let binary = '';
   
-  if (quotient === 0) {
-    return '0';
+  while(quotient > 0) {
+    remainder = quotient % 2;
+    quotient = Math.floor(quotient / 2);
+    binary += remainder;
   }
-  
-  while (quotient > 0) {
-    remainder = quotient / 2;
-    quotient = Math.floor(remainder);
-    
-    if (Number.isInteger(remainder)) {
-      binary.push(0);
-    } else {
-      binary.push(1);
-    }
-  }
-  
-  return binary.map((_, i) => binary[(binary.length - 1) - i]).join('');
+
+  return binary;
 }
