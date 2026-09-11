@@ -11,9 +11,11 @@
 
 
 // write the function isAnagram
-var isAnagram = function(test, original) {
-  const testSorted = test.toLowerCase().split('').sort().join('');
-  const originalSorted = original.toLowerCase().split('').sort().join('');
-  
-  return testSorted === originalSorted;
+var isAnagram = function(test, original) {  
+  return sortString(test) === sortString(original);
 };
+
+
+const sortString = (str) => {
+  return str.toLowerCase().split('').sort().join('');
+}
